@@ -1,0 +1,13 @@
+To upload files:
+rsync -chavzP --stats ./ <nethz-user>@euler.ethz.ch:/cluster/home/<nethz-user>/IML/task3
+
+Then run the following under IML/task3:
+env2lmod
+module load python
+bsub -W 24:00 -n 48 python3.7 euler.py
+
+To check job:
+bjobs
+
+To check where it's at after running:
+cat logAllFD.log

@@ -1,0 +1,10 @@
+For this project we did use quite a lot of libraries, assuch sklearn, matplotlib, and tensorflow is needed.
+
+The first thing we noticed with the training data is that it has very weird values in time, as we expected it to be from just 1 to 12. As such we align all times to be from 1 to 12.
+We normalize everything except the time and the pid. For this we use the StandardScalar of sklearn and only train it on the train data.
+As we have per patient exactly 12 data points per feature we just decided to basically reshape this into a feature per timestamp. This way we have for each patient one datapoint per feature and can use this as normal to train, test and predict.
+Now as for "timerizing" the NaN's, that means for us to create for each of the features for each timestamp a new feature that is either 1 or 0. 0 if the original value was NaN and 1 otherwise. The actual NaNs in the timerized features are imputed with mean.
+After this preprocessing we have now a feature size of 818 and tried to use this first with the MLPClassifier from sklearn, but that only reached around 65% score.
+We found an example how to handle imbalanced data. We followed it for our data and hence now have a NN consisting of two dense layers with relus and size 400 and 150. The output layer is of size 11 (TESTS + sepsis) and has as an activation function sigmoid. Between the layers there are Dropout layerst of 0.25 and 0.4. The optimizer is the keras Adam optimizer with binary_crossentropy loss. Our batch size is 1024 and we split our training data into a 80% train, 16% test and 4% validation data. With the early stopping function of keras, which results in an average amount of epochs of 20.
+To then actually train and predict our needed labels, we train this model once on all of our training set (train 80%, val 20%). For the VITALS we use just an easy Ridge regression of sklearn on our preprocessed data.
+After we then combine all of them into one dataframe we export it using the to_csv.

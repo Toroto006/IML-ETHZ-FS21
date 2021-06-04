@@ -1,0 +1,13 @@
+Important! These are the requirements to run: numpy, pandas, sklearn
+This submission uses sklearn's KFold to calculate the folds.
+Hence sklearn as a python package is needed!
+(As well as numpy for the other calculations and pandas for the data formating and working)
+
+Report:
+As we use colab for our development we load the training data from the github repo where we uploaded it (same repo as the jupyter notebook itself is saved to).
+Then we split the 700 lines of training data into 7 splits as per kfold to try out our pipeline, where we saw that on most folds we are below the baseline.
+This pipeline is nothing much, we just first calculate the feature transformations on the training data and then run a ridge regression on it.
+(Where we use our the ridge regression we saw during one of the exercise sessions). The general idea for the feature transformation was taken from that same exercise session code,
+but then reshaped to the necessary size for this problem.
+We did try to change the read and written precision of the values to and from the csv, but that did not change much (actually higher precision gave a lower public score).
+Before writing out the 21 weights to the file 'out.csv', is the execution of our get_coefficients with all of the training data we have.

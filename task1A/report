@@ -1,0 +1,12 @@
+Important! These are the requirements to run: numpy, pandas, sklearn
+This submission uses sklearn's ridge linear model to calculate the ridge regression.
+Hence sklearn as a python package is needed!
+(As well as numpy for the other calculations and pandas for the data formating and working)
+
+Report:
+As we use colab for our development we load the training data from the github repo where we uploaded it (same repo as the jupyter notebook itself is saved to).
+Then we split the 150 lines of training data into 10 splits (we tried to first also shuffel the training data, as we thought the order might be biased, but that did not improve our score).
+After that we create directly nice dataframes for all 10 iterations of the cross-validation.
+The ridge regression model fitting and prediction is done using the sklearn.linear_model.Ridge(alpha=lambda).
+Here lambda is always the lambda we run these 10 ridge regressions with for this iteration (provided to us by you), as the alpha argument corresponds exactly to our lambda.
+Before writing out the five averages for the lambdas to the file 'testOut.csv', is the code combining all of the parts we created up to now, i.e. run each cross-validation for each lambda and calculate the averages.

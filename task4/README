@@ -1,0 +1,4 @@
+This code runs in the tensorflow/tensorflow:latest-gpu-jupyter docker, the command to start it was:
+docker run -d --gpus all -v /root/iml2021/task4:/tf/task4 -p 8888:8888 -p 6006-6015:6006-6015 tensorflow/tensorflow:latest-gpu-jupyter
+and then to follow the log:
+docker logs --follow <docker id>

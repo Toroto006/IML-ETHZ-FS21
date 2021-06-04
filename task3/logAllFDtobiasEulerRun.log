@@ -1,0 +1,61 @@
+Starting new run at 2021-05-12 23:27:06.407889
+  Sequence  Active
+0     DKWL       0
+1     FCHN       0
+2     KDQP       0
+  Sequence
+0     HWFK
+1     MWPW
+2     ALDV
+Starting to fit over grid search
+Fitting 10 folds for each of 2430 candidates, totalling 24300 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 48 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  66 tasks      | elapsed:  1.4min
+[Parallel(n_jobs=-1)]: Done 269 tasks      | elapsed:  4.6min
+[Parallel(n_jobs=-1)]: Done 552 tasks      | elapsed: 10.9min
+[Parallel(n_jobs=-1)]: Done 917 tasks      | elapsed: 20.8min
+[Parallel(n_jobs=-1)]: Done 1362 tasks      | elapsed: 34.7min
+[Parallel(n_jobs=-1)]: Done 1889 tasks      | elapsed: 44.5min
+[Parallel(n_jobs=-1)]: Done 2496 tasks      | elapsed: 63.1min
+[Parallel(n_jobs=-1)]: Done 3185 tasks      | elapsed: 77.2min
+[Parallel(n_jobs=-1)]: Done 3954 tasks      | elapsed: 99.1min
+[Parallel(n_jobs=-1)]: Done 4805 tasks      | elapsed: 117.8min
+[Parallel(n_jobs=-1)]: Done 5736 tasks      | elapsed: 142.2min
+[Parallel(n_jobs=-1)]: Done 6749 tasks      | elapsed: 171.1min
+[Parallel(n_jobs=-1)]: Done 7842 tasks      | elapsed: 197.6min
+[Parallel(n_jobs=-1)]: Done 9017 tasks      | elapsed: 221.6min
+[Parallel(n_jobs=-1)]: Done 10272 tasks      | elapsed: 249.1min
+[Parallel(n_jobs=-1)]: Done 11609 tasks      | elapsed: 278.2min
+[Parallel(n_jobs=-1)]: Done 13026 tasks      | elapsed: 309.9min
+[Parallel(n_jobs=-1)]: Done 14525 tasks      | elapsed: 343.8min
+[Parallel(n_jobs=-1)]: Done 16104 tasks      | elapsed: 380.6min
+[Parallel(n_jobs=-1)]: Done 17765 tasks      | elapsed: 424.6min
+[Parallel(n_jobs=-1)]: Done 19506 tasks      | elapsed: 471.5min
+[Parallel(n_jobs=-1)]: Done 21329 tasks      | elapsed: 525.1min
+[Parallel(n_jobs=-1)]: Done 23232 tasks      | elapsed: 578.6min
+[Parallel(n_jobs=-1)]: Done 24300 out of 24300 | elapsed: 612.6min finished
+GridSearchCV(cv=10, error_score='raise-deprecating',
+             estimator=MLPClassifier(activation='relu', alpha=0.0001,
+                                     batch_size='auto', beta_1=0.9,
+                                     beta_2=0.999, early_stopping=False,
+                                     epsilon=1e-08, hidden_layer_sizes=(100,),
+                                     learning_rate='constant',
+                                     learning_rate_init=0.001, max_iter=200,
+                                     momentum=0.9, n_iter_no_change=10,
+                                     nesterovs_momentum=True, power_t=0.5,
+                                     random_st...
+                         'hidden_layer_sizes': [(10, 1), (10, 3), (10, 5),
+                                                (10, 7), (10, 9), (15, 1),
+                                                (15, 3), (15, 5), (15, 7),
+                                                (15, 9), (20, 1), (20, 3),
+                                                (20, 5), (20, 7), (20, 9),
+                                                (25, 1), (25, 3), (25, 5),
+                                                (25, 7), (25, 9), (30, 1),
+                                                (30, 3), (30, 5), (30, 7),
+                                                (30, 9), (35, 1), (35, 3),
+                                                (35, 5), (35, 7), (35, 9), ...],
+                         'learning_rate': ['constant', 'invscaling',
+                                           'adaptive']},
+             pre_dispatch='2*n_jobs', refit=True, return_train_score=False,
+             scoring=None, verbose=2)
+{'activation': 'logistic', 'alpha': 0.1, 'hidden_layer_sizes': (40, 7), 'learning_rate': 'constant'}
